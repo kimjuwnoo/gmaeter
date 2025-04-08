@@ -1,10 +1,19 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+:root {
+  --primary-color: #007acc;
+  --secondary-color: #005f99;
+  --background-color: #f9fafb;
+  --text-color: #333;
+}
 
 body {
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f9fafb;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+a {
+  color: var(--primary-color);
+}
+
+a:hover {
+  color: var(--secondary-color);
 }
