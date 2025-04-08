@@ -2,16 +2,17 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    CUSTOM_API_URL: process.env.CUSTOM_API_URL,
+    CUSTOM_API_URL: process.env.CUSTOM_API_URL || 'https://default-api.example.com',
   },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       config.resolve.fallback.fs = false;
     }
+    // Add more webpack optimizations here if needed
     return config;
   },
   images: {
-    domains: ['example.com'],
+    domains: ['example.com', 'another-domain.com'],
   },
   async redirects() {
     return [
@@ -43,10 +44,18 @@ const nextConfig = {
             key: 'X-Frame-Options',
             value: 'DENY',
           },
+          {
+            key: 'Content-Security-Policy',
+            value: "default-src 'self'; script-src 'self'; object-src 'none';",
+          },
+          {
+            key: 'Referrer-Policy',
+            value: 'no-referrer',
+          },
         ],
       },
     ];
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
