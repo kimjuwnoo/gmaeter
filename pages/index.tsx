@@ -1,8 +1,7 @@
 import Head from 'next/head';
-import Card from '@/components/Card'; // 경로 주의!
-import cards from '@/data/cards.json'; // 경로 주의!
+import Card from '@/components/Card';
+import cards from '@/data/cards.json';
 
-// ✅ 정확한 타입 정의
 type AuctionCard = {
   사건번호: string;
   물건종류: string;
