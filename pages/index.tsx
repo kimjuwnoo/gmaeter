@@ -1,7 +1,7 @@
+// pages/index.tsx
 import Head from 'next/head';
 import Card from '../components/Card';
 import cards from '../data/cards.json';
-import '../styles/globals.css';
 
 export default function Home() {
   return (
