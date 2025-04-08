@@ -1,19 +1,31 @@
 {
   "compilerOptions": {
-    "target": "es5", // Specifies the target JavaScript version, in this case, ECMAScript 5.
-    "lib": ["dom", "dom.iterable", "esnext"], // Specifies the library files to be included in the compilation.
-    "allowJs": true, // Allows JavaScript files to be compiled.
-    "skipLibCheck": true, // Skips type checking of declaration files.
-    "strict": false, // Disables all strict type-checking options.
-    "forceConsistentCasingInFileNames": true, // Ensures that file names are case-sensitive.
-    "noEmit": true, // Prevents the compiler from emitting output files.
-    "esModuleInterop": true, // Enables compatibility with CommonJS and ES Modules.
-    "module": "esnext", // Specifies the module code generation, in this case, ESNext.
-    "moduleResolution": "node", // Specifies module resolution strategy, in this case, Node.js.
-    "resolveJsonModule": true, // Allows importing .json files.
-    "isolatedModules": true, // Ensures that each file is treated as a separate module.
-    "jsx": "preserve" // Keeps JSX as it is in the output instead of transforming it.
+    "target": "ES2021",                             // 최신 JavaScript 표준 버전 지원
+    "lib": ["dom", "dom.iterable", "esnext"],       // 브라우저 환경 지원
+    "allowJs": true,                                // JS 파일도 포함하여 컴파일
+    "skipLibCheck": true,                           // 라이브러리 타입 검사 생략 (속도 향상)
+    "strict": true,                                 // 엄격한 타입 검사 (안정성 향상)
+    "forceConsistentCasingInFileNames": true,       // 파일명 대소문자 일관성 유지
+    "noEmit": true,                                 // 컴파일된 JS 파일 출력 방지 (Next.js에 최적화)
+    "esModuleInterop": true,                        // CommonJS 모듈과의 호환성 지원
+    "module": "esnext",                             // 최신 모듈 시스템 지원
+    "moduleResolution": "node",                     // Node.js 기반의 모듈 해결 방식
+    "resolveJsonModule": true,                      // JSON 파일 import 허용
+    "isolatedModules": true,                        // 개별 모듈로 독립적 처리
+    "jsx": "preserve",                              // JSX 코드 유지 (Next.js 자체 처리)
+    "incremental": true,                            // 빌드 성능 향상 (증분 컴파일 활성화)
+    "baseUrl": ".",                                 // 절대 경로 사용 활성화
+    "paths": {
+      "@/*": ["./*"]                                // 프로젝트 내부 절대 경로 설정
+    }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"], // Specifies the files to be included in the compilation.
-  "exclude": ["node_modules"] // Specifies the files to be excluded from the compilation.
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "**/*.json"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }
