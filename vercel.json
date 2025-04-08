@@ -1,0 +1,9 @@
+{
+  "regions": ["hnd1", "icn1"], 
+  "functions": {
+    "api/**.ts": {
+      "memory": 1024,
+      "maxDuration": 10
+    }
+  }
+}
