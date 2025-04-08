@@ -1,9 +1,16 @@
 {
-  "regions": ["hnd1", "icn1"], 
+  "regions": ["hnd1", "icn1"],
   "functions": {
-    "api/**.ts": {
+    "api/**/*.ts": {
+      "memory": 1024,
+      "maxDuration": 10
+    },
+    "api/**/*.js": {
       "memory": 1024,
       "maxDuration": 10
     }
-  }
+  },
+  "routes": [],
+  "cleanUrls": true,
+  "trailingSlash": false
 }
