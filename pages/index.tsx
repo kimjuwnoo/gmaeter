@@ -1,35 +1,30 @@
 import Head from 'next/head';
-import Card from '../components/Card';
-import cards from '../data/cards.json';
+import Card from '@/components/Card';
+import cards from '@/data/cards.json';
 
-interface CardData {
-  title: string;
-  description: string;
-  // Add other card properties here
-}
+type CardData = {
+  사건번호: string;
+  물건종류: string;
+  감정가: string;
+  최저입찰가: string;
+  매각기일: string;
+  요약분석: string;
+};
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gray-50 p-4">
-      <PageHead />
-      <h1 className="text-3xl font-bold text-center mb-6">📌 부산 부동산 경매 분석 카드 리스트</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-        {cards.length > 0 ? (
-          cards.map((card: CardData, index: number) => (
+    <>
+      <Head>
+        <title>경매터 - Gmaeter</title>
+      </Head>
+      <main className="p-8 bg-gray-100 min-h-screen">
+        <h1 className="text-2xl font-bold mb-6">부동산 경매 매물 분석</h1>
+        <div className="grid gap-4">
+          {cards.map((card: CardData, index: number) => (
             <Card key={index} data={card} />
-          ))
-        ) : (
-          <p className="text-center col-span-full">데이터를 불러오는 중 문제가 발생했습니다.</p>
-        )}
-      </div>
-    </div>
+          ))}
+        </div>
+      </main>
+    </>
   );
 }
-
-const PageHead = () => (
-  <Head>
-    <title>경매터 - GPT 부동산 경매 분석</title>
-    <meta name="description" content="부산 부동산 경매 분석 카드 리스트" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  </Head>
-);
