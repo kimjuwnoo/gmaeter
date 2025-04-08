@@ -10,7 +10,6 @@
       "maxDuration": 10
     }
   },
-  "routes": [],
   "cleanUrls": true,
   "trailingSlash": false
 }
