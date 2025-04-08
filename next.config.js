@@ -1,27 +1,26 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true,
-  swcMinify: true,  // 🚀 빌드 속도 및 성능 최적화 (누락됐던 부분)
-  poweredByHeader: false, // 🔒 보안성 강화 (Next.js 버전 숨기기)
+  reactStrictMode: true, // React 엄격 모드 활성화
+  swcMinify: true,       // SWC를 사용한 빌드 최적화
+  poweredByHeader: false, // 'X-Powered-By' 헤더 제거로 보안 강화
   env: {
     CUSTOM_API_URL: process.env.CUSTOM_API_URL || 'https://default-api.example.com',
   },
+  images: {
+    domains: ['example.com', 'another-domain.com'], // 외부 이미지 도메인 허용
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
-      config.resolve.fallback.fs = false;
+      config.resolve.fallback = { fs: false }; // 클라이언트 사이드에서 'fs' 모듈 사용 방지
     }
-    // 추가적인 webpack 최적화가 필요하면 여기에 추가
     return config;
-  },
-  images: {
-    domains: ['example.com', 'another-domain.com'],
   },
   async redirects() {
     return [
       {
         source: '/old-path',
         destination: '/new-path',
-        permanent: true,
+        permanent: true, // 영구 리디렉션 설정
       },
     ];
   },
@@ -29,7 +28,7 @@ const nextConfig = {
     return [
       {
         source: '/api/:path*',
-        destination: 'https://api.example.com/:path*',
+        destination: 'https://api.example.com/:path*', // API 경로 재작성
       },
     ];
   },
