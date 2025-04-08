@@ -1,19 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve"
+    "target": "es5", // Specifies the target JavaScript version, in this case, ECMAScript 5.
+    "lib": ["dom", "dom.iterable", "esnext"], // Specifies the library files to be included in the compilation.
+    "allowJs": true, // Allows JavaScript files to be compiled.
+    "skipLibCheck": true, // Skips type checking of declaration files.
+    "strict": false, // Disables all strict type-checking options.
+    "forceConsistentCasingInFileNames": true, // Ensures that file names are case-sensitive.
+    "noEmit": true, // Prevents the compiler from emitting output files.
+    "esModuleInterop": true, // Enables compatibility with CommonJS and ES Modules.
+    "module": "esnext", // Specifies the module code generation, in this case, ESNext.
+    "moduleResolution": "node", // Specifies module resolution strategy, in this case, Node.js.
+    "resolveJsonModule": true, // Allows importing .json files.
+    "isolatedModules": true, // Ensures that each file is treated as a separate module.
+    "jsx": "preserve" // Keeps JSX as it is in the output instead of transforming it.
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"], // Specifies the files to be included in the compilation.
+  "exclude": ["node_modules"] // Specifies the files to be excluded from the compilation.
 }
