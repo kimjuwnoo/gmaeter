@@ -1,0 +1,23 @@
+[
+  {
+    "id": "2024-001",
+    "caseNumber": "2024타경1234",
+    "saleDate": "2025-04-25",
+    "address": "부산 해운대구 좌동 123",
+    "appraisalPrice": 320000000
+  },
+  {
+    "id": "2024-002",
+    "caseNumber": "2024타경5678",
+    "saleDate": "2025-04-30",
+    "address": "부산 수영구 민락동 456",
+    "appraisalPrice": 185000000
+  },
+  {
+    "id": "2024-003",
+    "caseNumber": "2024타경9876",
+    "saleDate": "2025-05-02",
+    "address": "부산 연제구 연산동 789",
+    "appraisalPrice": 410000000
+  }
+]
